@@ -1,5 +1,7 @@
 package com.tts.KetoWeb.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -51,6 +53,12 @@ public class RecipeController {
 		return new ResponseEntity<String>("Project Task Deleted", HttpStatus.OK);
 	}
 	
+	//Filter By Category
+	@GetMapping("/all/{category}")
+	public List<Recipe> getRecipeByCategory(@PathVariable String category) {
+		List<Recipe> recipe = recipeService.findByCategory(category);
+		return recipe;
+	}
 }
 
 
