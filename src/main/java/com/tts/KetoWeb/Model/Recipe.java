@@ -41,5 +41,9 @@ public class Recipe {
 	
 	@Column(name="images")
 	private String images;
+	
+	@Column(name="category")
+	private String category;
+	
 
 }
