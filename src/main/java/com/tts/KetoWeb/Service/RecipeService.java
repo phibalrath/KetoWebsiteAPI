@@ -1,5 +1,7 @@
 package com.tts.KetoWeb.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,11 @@ public class RecipeService {
 	public void delete(Long id) {
 		Recipe recipe = findById(id);
 		recipeRepository.delete(recipe);
+	}
+	
+	public List<Recipe> findByCategory(String category) {
+		//calling findByCategory method in Repository
+		return recipeRepository.findByCategory(category);
 	}
 	
 	
